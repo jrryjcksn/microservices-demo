@@ -1,12 +1,15 @@
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: GitRepository
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
 metadata:
   name: microservices-demo
   namespace: wego-system
 spec:
-  interval: 30s
-  ref:
-    branch: master
-  url: https://github.com/jrryjcksn/microservices-demo.git
+  interval: 1m0s
+  path: ./deploy/kubernetes/manifests
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: microservices-demo
+  validation: client
 

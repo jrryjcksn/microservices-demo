@@ -3,12 +3,12 @@ apiVersion: wego.weave.works/v1alpha1
 kind: Application
 metadata:
   labels:
-    wego.weave.works/app-identifier: wego-85414ad27cd476d497d715818deda0c6
+    wego.weave.works/app-identifier: wego-8989d0f045c31376a035cc20777d0374
   name: microservices-demo
   namespace: wego-system
 spec:
   branch: master
   deployment_type: kustomize
-  path: ./deploy/kubernetes/manifests
+  path: deploy/kubernetes/manifests
   source_type: git
   url: ssh://git@github.com/jrryjcksn/microservices-demo.git
